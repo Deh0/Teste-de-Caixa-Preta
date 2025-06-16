@@ -75,5 +75,7 @@ Tanto no teste funcional quanto no teste não funcional, houve falha no teste de
 Já no teste não funcional, a falha revela uma grave vulnerabilidade de segurança que pode levar a consequências severas, como exposição de dados confidenciais, alteração ou exclusão de informações, acesso não autorizado a contas e até controle total do sistema pelo invasor. Além disso, essa falha pode comprometer a confiabilidade, a privacidade dos usuários e causar danos financeiros e à reputação da empresa.
 
 
-# O Parabank começou a permitir o acesso de contas não cadastradas, não autorizadas, exemplo: se fosse fazer um teste de colocar caracteres no usuário ou na senha não seria informado nenhuma mensagem de erro, e conseguiria acessar a conta, mesmo a conta não existindo. 
+# Sistema começou a dar erro
+
+O Parabank começou a permitir o acesso de contas não cadastradas, não autorizadas, exemplo: se fosse fazer um teste de colocar caracteres no usuário ou na senha não seria informado nenhuma mensagem de erro, e conseguiria acessar a conta, mesmo a conta não existindo. 
 
