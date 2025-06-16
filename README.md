@@ -65,7 +65,7 @@ Retornou o resultado esperado.
 
 ✅ **Teste de Tempo de Resosta:** O tempo de resposta, no contexto de teste não funcional, refere-se ao tempo que o sistema leva para responder a uma solicitação do usuário, como o carregamento de uma página ou a autenticação em um login. Esse parâmetro é fundamental para avaliar o desempenho do software, garantindo que ele seja rápido e eficiente sob condições normais de uso.
 
-Retornou o resultado esperado
+Retornou o resultado esperado.
 
 # Conclusão dos Testes
 
