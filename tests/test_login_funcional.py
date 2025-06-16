@@ -31,6 +31,9 @@ def test_login_sucesso():
         time.sleep(3)
         assert "Accounts Overview" in driver.page_source, "Login falhou ou página incorreta"
         print("Teste de login com sucesso passou.")
+    except:
+        print("Erro ao tentar realizar o teste de login com sucesso.")
+        assert False, "Teste de login com sucesso falhou, as credenciais não funcionaram."
     finally:
         driver.quit()
 
@@ -47,6 +50,9 @@ def test_login_senha_incorreta():
 
         assert "The username and password could not be verified." in mensagem_erro, "Mensagem de erro incorreta ou não exibida"
         print("Teste de login com senha incorreta, o sistema não permitiu acessar a conta.")
+    except:
+        print("Erro ao tentar realizar o teste de login com senha incorreta.")
+        assert False, "Teste de login com senha incorreta falhou, o sistema permitiu acesso."
     finally:
         driver.quit()
 
@@ -63,6 +69,9 @@ def test_login_usuario_inexistente():
 
         assert "The username and password could not be verified." in mensagem_erro, "Mensagem de erro incorreta ou não exibida"
         print("Teste de login com usuário inexistente, não conseguiu acessar o site.")
+    except:
+        print("Erro ao tentar realizar o teste de login com usuário inexistente.")
+        assert False, "Teste de login com usuário inexistente falhou, o sistema permitiu acesso."
     finally:
         driver.quit()
 
@@ -80,8 +89,12 @@ def test_login_caracteres_especiais():
 
         assert "The username and password could not be verified." in mensagem_erro, "Mensagem de erro incorreta ou não exibida"
         print("Teste de login com caracteres especiais não conseguiu realizar login.")
+    except:
+        print("Erro ao tentar realizar o teste de login com caracteres especiais.")
+        assert False, "Teste de login com caracteres especiais falhou, o sistema permitiu acesso."
     finally:
         driver.quit()
+
 
 # Teste de Login com Limite de Caracteres
 def test_login_limite_caracteres():
