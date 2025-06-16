@@ -17,3 +17,13 @@ O objetivo seria realizar testes de forma automatizada para verificar se o softw
 - <strong>PyAutoGUI:</strong> O PyAutiGUI serve para automação de interações com a interface gráfica do usuário, contolando mouse e teclado para automatizar tarefas em qualquer aplicativo, incluindo desktop. Será utilizado para testes funcionais em aplicações desktop, testes de interface, e também pode ajudar em testes não funcionais que envolvem interação com o sistema operacional.
 
 # Sistema que foi realizado os testes funcionais: 
+
+O Parabank é uma aplicação web simuladora de um sistema bancário que oferece operações comuns como abertura de conta, transferências, depósitos e saques. Por ser uma aplicação completa, com interface e funcionalidades bem definidas, ela é ideal para testes de caixa preta, cujo objetivo é validar as funcionalidades do sistema sem conhecimento do código interno.
+Nesse contexto, utilizamos o Parabank para realizar testes funcionais, focando no Login, para garantir que o sistema se comporte conforme esperado, aceitando credenciais válidas e rejeitando inválidas, além de verificar mensagens de erro apropriadas. Também aplicamos testes não funcionais para avaliar aspectos como desempenho, segurança, usabilidade e confiabilidade do sistema, garantindo que o Parabank não só funcione corretamente, mas também atenda a requisitos de qualidade além da funcionalidade.
+
+- <strong>Teste de Login com credenciais corretas:</strong> Para verificar se o sistema verifica corretamente um usuário quando ele fornece um nome de usuário e senha válidos. Ou seja, o teste confirma que ao inserir os dados de acesso legítimos, o sistema permite o acesso á conta, garantindo que o proceso de autenticalção está funcionando como esperado. 
+![image](https://github.com/user-attachments/assets/c0c9932c-70e3-45c9-81dd-2d9354430b44)
+
+
+
+
