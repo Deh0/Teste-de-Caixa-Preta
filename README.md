@@ -35,8 +35,8 @@ Nesse contexto, utilizamos o Parabank para realizar testes funcionais, focando n
 
 - <strong> Teste de Login com Inserção de SQL Injection:</strong> O teste de inserção de SQL Injection consiste em tentar inserir comandos SQL maliciosos nos campos de entrada de uma aplicação (como o formulário de login) para verificar se o sistema é vulnerável a esse tipo de ataque. O objetivo é explorar falhas na validação e tratamento dos dados fornecidos pelo usuário, que, se concatenados diretamente em consultas SQL, podem permitir que um invasor modifique a consulta original e obtenha acesso não autorizado, extraia, modifique ou exclua dados do banco.
 
-Era pra ter retornado uma mensagem de "Teste de login com SQL injection passou", porém não apareceu mensagem de erro no sistema, dando erro e não passasndo no teste. 
-![image](https://github.com/user-attachments/assets/0aba9f8d-0aa5-4d39-9d39-dcc6fb32f739)
+  Era pra ter retornado uma mensagem de "Teste de login com SQL injection passou", porém não apareceu mensagem de erro no sistema,    dando erro e não passasndo no teste. 
+ ![image](https://github.com/user-attachments/assets/0aba9f8d-0aa5-4d39-9d39-dcc6fb32f739)
 
 - <strong> Teste de Login com Limite de Caracteres nos Campos:</strong> O teste de login com limite de caracteres consiste em verificar se o sistema aceita apenas uma quantidade adequada de caracteres nos campos de usuário e senha, garantindo que entradas muito longas ou muito curtas sejam tratadas corretamente. Esse teste é importante para evitar problemas como estouro de buffer, falhas na validação e possíveis vulnerabilidades de segurança.
 ![image](https://github.com/user-attachments/assets/55ea8ff8-3fa0-4c1f-9e51-70edf0c148da)
