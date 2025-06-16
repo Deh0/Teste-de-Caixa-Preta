@@ -79,7 +79,7 @@ def test_mensagem_erro_segura():
         termos_proibidos = ["Exception", "Stack", "Trace", "SQL", "Database", "root", "localhost"]
         for termo in termos_proibidos:
             assert termo not in mensagem_erro, f"Mensagem de erro contém termo sensível: {termo}"
-        print("Teste de mensagem de erro segura passou.")
+        print("Teste de mensagem de erro segura, não obteve informações sensíveis.")
     finally:
         driver.quit()
 
@@ -98,7 +98,7 @@ def test_feedback_visual_apos_erro():
         print("Mensagem de erro visível:", visivel)
 
         assert visivel, "A mensagem de erro não está visível após tentativa inválida."
-        print("Teste de feedback visual passou.")
+        print("Teste de feedback visual passou no teste .")
     finally:
         driver.quit()
 
@@ -116,7 +116,7 @@ def test_tempo_resposta_erro():
         print(f"Tempo de resposta do login: {tempo:.2f} segundos")
 
         assert tempo < 5, "Tempo de resposta muito alto"
-        print("Teste de tempo de resposta passou.")
+        print("Teste de tempo de resposta obeteve a resposta esperada.")
     finally:
         driver.quit()
 
