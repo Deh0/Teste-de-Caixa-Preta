@@ -40,29 +40,6 @@ def test_brute_force_tentativas_multiplas():
     finally:
         driver.quit()
 
-
-#Teste de SQL Injection no campo Senha
-def test_sql_injection_no_campo_senha():
-    driver = criar_driver()
-    try:
-        driver.find_element(By.NAME, "username").send_keys("Debora")
-        driver.find_element(By.NAME, "password").send_keys("' OR '1'='1")
-        driver.find_element(By.CSS_SELECTOR, ".button:nth-child(1)").click()
-        time.sleep(2)
-
-        mensagem_erro = driver.find_element(By.CSS_SELECTOR, ".error").text
-        print("Mensagem após tentativa de SQL Injection:", mensagem_erro)
-
-        assert "could not be verified" in mensagem_erro
-        print("Teste de SQL Injection passou, significa que a aplicação está protegida contra esse tipo de ataque.")
-    except:
-        print("Erro ao tentar realizar o teste de SQL Injection.")
-        assert False, "Teste de SQL Injection falhou, a aplicação não está protegida."
-    finally:
-        driver.quit()
-
-# teste de inserção de SQL Injection não passou no teste.
-
 # Teste de Verificação de mensagens de erro
 def test_mensagem_erro_segura():
     driver = criar_driver()
@@ -120,3 +97,24 @@ def test_tempo_resposta_erro():
     finally:
         driver.quit()
 
+#Teste de SQL Injection no campo Senha
+def test_sql_injection_no_campo_senha():
+    driver = criar_driver()
+    try:
+        driver.find_element(By.NAME, "username").send_keys("Debora")
+        driver.find_element(By.NAME, "password").send_keys("' OR '1'='1")
+        driver.find_element(By.CSS_SELECTOR, ".button:nth-child(1)").click()
+        time.sleep(2)
+
+        mensagem_erro = driver.find_element(By.CSS_SELECTOR, ".error").text
+        print("Mensagem após tentativa de SQL Injection:", mensagem_erro)
+
+        assert "could not be verified" in mensagem_erro
+        print("Teste de SQL Injection passou, significa que a aplicação está protegida contra esse tipo de ataque.")
+    except:
+        print("Erro ao tentar realizar o teste de SQL Injection.")
+        assert False, "Teste de SQL Injection falhou, a aplicação não está protegida."
+    finally:
+        driver.quit()
+
+# teste de inserção de SQL Injection não passou no teste.

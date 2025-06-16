@@ -83,29 +83,6 @@ def test_login_caracteres_especiais():
     finally:
         driver.quit()
 
-# Teste de Login com Inserção de SQL Injetcion
-def test_login_sql_injection():
-    driver = criar_driver()
-    try:
-        driver.find_element(By.NAME, "username").send_keys("Debora' OR '1'='1")
-        driver.find_element(By.NAME, "password").send_keys("Teste1234")
-        driver.find_element(By.CSS_SELECTOR, ".button:nth-child(1)").click()
-
-        try:
-            mensagem_erro = WebDriverWait(driver, 5).until(
-                EC.visibility_of_element_located((By.CSS_SELECTOR, ".error"))
-            ).text
-            print("Mensagem de erro capturada:", mensagem_erro)
-            assert "The username and password could not be verified." in mensagem_erro, "Mensagem de erro incorreta"
-            print("Teste de login com SQL injection está agindo de acordo com o esperado.")
-        except:
-            print("Mensagem de erro não encontrada para tentativa de SQL Injection.")
-            assert False, "Mensagem de erro não apareceu. O sistema pode estar vulnerável ou não retornou feedback visível."
-    finally:
-        driver.quit()
-
-# teste de inserção de SQL Injection não passou no teste.
-
 # Teste de Login com Limite de Caracteres
 def test_login_limite_caracteres():
     driver = criar_driver()
@@ -129,3 +106,25 @@ def test_login_limite_caracteres():
     finally:
         driver.quit()
 
+# Teste de Login com Inserção de SQL Injetcion
+def test_login_sql_injection():
+    driver = criar_driver()
+    try:
+        driver.find_element(By.NAME, "username").send_keys("Debora' OR '1'='1")
+        driver.find_element(By.NAME, "password").send_keys("Teste1234")
+        driver.find_element(By.CSS_SELECTOR, ".button:nth-child(1)").click()
+
+        try:
+            mensagem_erro = WebDriverWait(driver, 5).until(
+                EC.visibility_of_element_located((By.CSS_SELECTOR, ".error"))
+            ).text
+            print("Mensagem de erro capturada:", mensagem_erro)
+            assert "The username and password could not be verified." in mensagem_erro, "Mensagem de erro incorreta"
+            print("Teste de login com SQL injection está agindo de acordo com o esperado.")
+        except:
+            print("Mensagem de erro não encontrada para tentativa de SQL Injection.")
+            assert False, "Mensagem de erro não apareceu. O sistema pode estar vulnerável ou não retornou feedback visível."
+    finally:
+        driver.quit()
+
+# teste de inserção de SQL Injection não passou no teste.
