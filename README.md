@@ -16,11 +16,12 @@ O objetivo seria realizar testes de forma automatizada para verificar se o softw
 
 - <strong>PyAutoGUI:</strong> O PyAutiGUI serve para automação de interações com a interface gráfica do usuário, contolando mouse e teclado para automatizar tarefas em qualquer aplicativo, incluindo desktop. Será utilizado para testes funcionais em aplicações desktop, testes de interface, e também pode ajudar em testes não funcionais que envolvem interação com o sistema operacional.
 
-# Sistema que foi realizado os testes funcionais: 
+# Sistema que foi realizado os testes: 
 
 O Parabank é uma aplicação web simuladora de um sistema bancário que oferece operações comuns como abertura de conta, transferências, depósitos e saques. Por ser uma aplicação completa, com interface e funcionalidades bem definidas, ela é ideal para testes de caixa preta, cujo objetivo é validar as funcionalidades do sistema sem conhecimento do código interno.
 Nesse contexto, utilizamos o Parabank para realizar testes funcionais, focando no Login, para garantir que o sistema se comporte conforme esperado, aceitando credenciais válidas e rejeitando inválidas, além de verificar mensagens de erro apropriadas. Também aplicamos testes não funcionais para avaliar aspectos como desempenho, segurança, usabilidade e confiabilidade do sistema, garantindo que o Parabank não só funcione corretamente, mas também atenda a requisitos de qualidade além da funcionalidade.
 
+# Teste Funcional:
 - <strong>Teste de Login com credenciais corretas:</strong> Para verificar se o sistema verifica corretamente um usuário quando ele fornece um nome de usuário e senha válidos. Ou seja, o teste confirma que ao inserir os dados de acesso legítimos, o sistema permite o acesso á conta, garantindo que o proceso de autenticalção está funcionando como esperado. 
 ![image](https://github.com/user-attachments/assets/c0c9932c-70e3-45c9-81dd-2d9354430b44)
 
@@ -41,6 +42,16 @@ Nesse contexto, utilizamos o Parabank para realizar testes funcionais, focando n
 - <strong> Teste de Login com Limite de Caracteres nos Campos:</strong> O teste de login com limite de caracteres consiste em verificar se o sistema aceita apenas uma quantidade adequada de caracteres nos campos de usuário e senha, garantindo que entradas muito longas ou muito curtas sejam tratadas corretamente. Esse teste é importante para evitar problemas como estouro de buffer, falhas na validação e possíveis vulnerabilidades de segurança.
 ![image](https://github.com/user-attachments/assets/55ea8ff8-3fa0-4c1f-9e51-70edf0c148da)
 
+# Teste Não Funcional:
 
+- <strong> Brute Force:</strong> O teste não funcional de brute force consiste em avaliar a capacidade do sistema de resistir a ataques de força bruta, que são tentativas automatizadas de adivinhar senhas ou credenciais por meio de múltiplas tentativas sequenciais, geralmente usando softwares que testam diversas combinações até encontrar a correta.
+![image](https://github.com/user-attachments/assets/fc262035-ea0b-440f-9b5a-196f24478117)
+
+- <strong> Teste de SQL Injection no campo senha:</strong> O teste de SQL Injection no campo senha, no contexto de teste não funcional, tem como objetivo verificar se a aplicação é vulnerável a ataques que exploram falhas no tratamento das entradas do usuário para manipular comandos SQL. Ao inserir códigos maliciosos no campo senha, como ' OR '1'='1, o teste busca identificar se a aplicação executa a consulta SQL de forma insegura, permitindo que um invasor contorne a autenticação e acesse o sistema sem credenciais válidas.
+Como não retornou o erro, provavelmente a Inserção funcionou, isso é erro serio e uma falha na segurança.
+![image](https://github.com/user-attachments/assets/968ce9da-7a5b-44d8-8e7e-41ece6c48688)
+
+- <strong> Teste de Verificação de mensagens de erro:</strong> O teste de verificação de mensagens de erro no contexto de teste não funcional consiste em avaliar se o sistema apresenta mensagens claras, informativas e adequadas quando ocorrem erros ou falhas, como em tentativas de login com dados incorretos. Esse teste vai além de simplesmente verificar se a funcionalidade está correta; ele analisa a usabilidade e a experiência do usuário, garantindo que as mensagens ajudem o usuário a entender o problema e saibam como proceder.
+![image](https://github.com/user-attachments/assets/f01d3e9e-257f-46f0-a590-c0f1d8bbb558)
 
 
