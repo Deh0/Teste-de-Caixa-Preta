@@ -46,7 +46,7 @@ def test_login_senha_incorreta():
         print("Mensagem de erro capturada:", mensagem_erro)
 
         assert "The username and password could not be verified." in mensagem_erro, "Mensagem de erro incorreta ou não exibida"
-        print("Teste de login com senha incorreta passou.")
+        print("Teste de login com senha incorreta, o sistema não permitiu acessar a conta.")
     finally:
         driver.quit()
 
@@ -62,7 +62,7 @@ def test_login_usuario_inexistente():
         print("Mensagem de erro capturada:", mensagem_erro)
 
         assert "The username and password could not be verified." in mensagem_erro, "Mensagem de erro incorreta ou não exibida"
-        print("Teste de login com usuário inexistente passou.")
+        print("Teste de login com usuário inexistente, não conseguiu acessar o site.")
     finally:
         driver.quit()
 
@@ -79,7 +79,7 @@ def test_login_caracteres_especiais():
         print("Mensagem de erro capturada:", mensagem_erro)
 
         assert "The username and password could not be verified." in mensagem_erro, "Mensagem de erro incorreta ou não exibida"
-        print("Teste de login com caracteres especiais passou.")
+        print("Teste de login com caracteres especiais não conseguiu realizar login.")
     finally:
         driver.quit()
 
@@ -97,7 +97,7 @@ def test_login_sql_injection():
             ).text
             print("Mensagem de erro capturada:", mensagem_erro)
             assert "The username and password could not be verified." in mensagem_erro, "Mensagem de erro incorreta"
-            print("Teste de login com SQL injection passou.")
+            print("Teste de login com SQL injection está agindo de acordo com o esperado.")
         except:
             print("Mensagem de erro não encontrada para tentativa de SQL Injection.")
             assert False, "Mensagem de erro não apareceu. O sistema pode estar vulnerável ou não retornou feedback visível."
@@ -122,7 +122,7 @@ def test_login_limite_caracteres():
             mensagem_erro = driver.find_element(By.CSS_SELECTOR, ".error").text
             print("Mensagem de erro capturada (limite de caracteres):", mensagem_erro)
             assert "The username and password could not be verified." in mensagem_erro
-            print("Teste de limite de caracteres passou.")
+            print("Teste de limite de caracteres não foi permitido pelo sistema.")
         except:
             print("Nenhuma mensagem de erro visível ao usar limite extremo de caracteres.")
             assert False, "Sistema não retornou mensagem clara para entrada muito longa."
