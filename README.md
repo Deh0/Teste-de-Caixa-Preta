@@ -1,5 +1,7 @@
 # Teste de Caixa Preta
 
+Nome dos participantes: Débora 2320516, Gabriel Sela 2320449, e Ruhan Faria 2222062 
+
 O teste de caixa preta é uma metodologia de testes de software em que o testador avalia as funcionalidades do sistema sem ter acesso ao código-fonte ou ao conhecimento da estrutura interna do software. O foco está nas entradas e saídas: o testador fornece dados de entrada e observa as respostas do sistema, validando se o comportamento está de acordo com os requisitos especificados. Esse tipo de teste pode ser utilizado tanto para validar funcionalidade quanto para avaliar aspectos como desempenho, segurança, e usabilidade. 
 
 O objetivo seria realizar testes de forma automatizada para verificar se o software faz o que deveria fazer, para verificar isso existem dois tipos de testes, o teste funcional e o teste não funcional
