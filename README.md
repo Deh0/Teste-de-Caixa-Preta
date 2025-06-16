@@ -20,44 +20,52 @@ O Parabank é uma aplicação web simuladora de um sistema bancário que oferece
 Nesse contexto, utilizamos o Parabank para realizar testes funcionais, focando no Login, para garantir que o sistema se comporte conforme esperado, aceitando credenciais válidas e rejeitando inválidas, além de verificar mensagens de erro apropriadas. Também aplicamos testes não funcionais para avaliar aspectos como desempenho, segurança, usabilidade e confiabilidade do sistema, garantindo que o Parabank não só funcione corretamente, mas também atenda a requisitos de qualidade além da funcionalidade.
 
 # Teste Funcional:
-👍 **Teste de Login com credenciais corretas:** Para verificar se o sistema verifica corretamente um usuário quando ele fornece um nome de usuário e senha válidos. Ou seja, o teste confirma que ao inserir os dados de acesso legítimos, o sistema permite o acesso á conta, garantindo que o proceso de autenticalção está funcionando como esperado. 
-![image](https://github.com/user-attachments/assets/c0c9932c-70e3-45c9-81dd-2d9354430b44)
+✅ **Teste de Login com credenciais corretas:** Para verificar se o sistema verifica corretamente um usuário quando ele fornece um nome de usuário e senha válidos. Ou seja, o teste confirma que ao inserir os dados de acesso legítimos, o sistema permite o acesso á conta, garantindo que o proceso de autenticalção está funcionando como esperado. 
 
-👍 **Teste de Login com Senha Incorreta:** Testar Login com senha incorreta propositalmente é útil para o teste de caixa preta porque permite validar se o sistema reage corretamente a entradas inválidas, sem precisar conhecer seu funcionamento interno. Esse tipo de teste verifica se o sistema bloqueia o acesso e exibe mensagens de erro apropriadas, garantindo que a funcionalidade de autenticação está protegendo o sistema contra acessos indevidos. No contexto do teste funcional, esse teste é importante para confirmar que o sistema cumpre os requisitos especificados, ou seja, que ele rejeita credenciais incorretas e impede o login, evitando falhas de segurança e melhorando a confiabilidade do sistema.
-![image](https://github.com/user-attachments/assets/8dc69c3f-c557-40b1-bc4a-6bc2314b6c90)
+Retornou o resultado esperado, conseguiu entrar no site e realizar o login corretamente.
 
-👍 **Teste de Login com Usuário Inexistente:** Testar o login com um usuário inexistente significa verificar se o sistema responde corretamente quando alguém tenta acessar com um nome de usuário que não está cadastrado, segue a mesma lógica do teste de Login com Senha Incorreta.
-![image](https://github.com/user-attachments/assets/3946e6b9-7d23-462b-99c7-3ecfe9e031c3)
 
-👍 **Teste de Login com Caraceters Especias:** O Parabank recusa Login com caraceteres especiais, então foi feito uma automação com selenium e pytest para verificação dessa informação, tendo que retornar uma mensagem de erro a respeito disso.
- ![image](https://github.com/user-attachments/assets/1b642d1a-2647-49fb-b278-9aa17de05092)
+✅ **Teste de Login com Senha Incorreta:** Testar Login com senha incorreta propositalmente é útil para o teste de caixa preta porque permite validar se o sistema reage corretamente a entradas inválidas, sem precisar conhecer seu funcionamento interno. Esse tipo de teste verifica se o sistema bloqueia o acesso e exibe mensagens de erro apropriadas, garantindo que a funcionalidade de autenticação está protegendo o sistema contra acessos indevidos. No contexto do teste funcional, esse teste é importante para confirmar que o sistema cumpre os requisitos especificados, ou seja, que ele rejeita credenciais incorretas e impede o login, evitando falhas de segurança e melhorando a confiabilidade do sistema.
 
-👎 **Teste de Login com Inserção de SQL Injection:** O teste de inserção de SQL Injection consiste em tentar inserir comandos SQL maliciosos nos campos de entrada de uma aplicação (como o formulário de login) para verificar se o sistema é vulnerável a esse tipo de ataque. O objetivo é explorar falhas na validação e tratamento dos dados fornecidos pelo usuário, que, se concatenados diretamente em consultas SQL, podem permitir que um invasor modifique a consulta original e obtenha acesso não autorizado, extraia, modifique ou exclua dados do banco.
+Retonou o resultado esperado, erro por ter colocado uma senha inválida.
 
-  Esperava-se uma mensagem confirmando que o teste de SQL Injection foi bloqueado ('Teste de login com SQL injection passou'), porém nenhuma mensagem de erro foi exibida, indicando possível falha na validação dos inputs. 
- ![image](https://github.com/user-attachments/assets/0aba9f8d-0aa5-4d39-9d39-dcc6fb32f739)
+✅ **Teste de Login com Usuário Inexistente:** Testar o login com um usuário inexistente significa verificar se o sistema responde corretamente quando alguém tenta acessar com um nome de usuário que não está cadastrado, segue a mesma lógica do teste de Login com Senha Incorreta.
 
-👍 **Teste de Login com Limite de Caracteres nos Campos:** O teste de login com limite de caracteres consiste em verificar se o sistema aceita apenas uma quantidade adequada de caracteres nos campos de usuário e senha, garantindo que entradas muito longas ou muito curtas sejam tratadas corretamente. Esse teste é importante para evitar problemas como estouro de buffer, falhas na validação e possíveis vulnerabilidades de segurança.
-![image](https://github.com/user-attachments/assets/55ea8ff8-3fa0-4c1f-9e51-70edf0c148da)
+Retornou o resultado esperado, erro por ter colocado um usuário inexistente.
+
+✅ **Teste de Login com Caraceters Especias:** O Parabank recusa Login com caraceteres especiais, então foi feito uma automação com selenium e pytest para verificação dessa informação, tendo que retornar uma mensagem de erro a respeito disso.
+
+Retornou o resultado esperado, o sistema não permitiu caracteres especiais e informou um erro. 
+
+❌ **Teste de Login com Inserção de SQL Injection:** O teste de inserção de SQL Injection consiste em tentar inserir comandos SQL maliciosos nos campos de entrada de uma aplicação (como o formulário de login) para verificar se o sistema é vulnerável a esse tipo de ataque. O objetivo é explorar falhas na validação e tratamento dos dados fornecidos pelo usuário, que, se concatenados diretamente em consultas SQL, podem permitir que um invasor modifique a consulta original e obtenha acesso não autorizado, extraia, modifique ou exclua dados do banco.
+
+Esperava-se uma mensagem confirmando que o teste de SQL Injection foi bloqueado ('Teste de login com SQL injection está agindo de acordo com o esperado'), porém nenhuma mensagem de erro foi exibida, indicando possível falha na validação dos inputs. O que pode informar que o sistema pode estar vulnerável ou não retornou feedback visível.
+
+✅ **Teste de Login com Limite de Caracteres nos Campos:** O teste de login com limite de caracteres consiste em verificar se o sistema aceita apenas uma quantidade adequada de caracteres nos campos de usuário e senha, garantindo que entradas muito longas ou muito curtas sejam tratadas corretamente. Esse teste é importante para evitar problemas como estouro de buffer, falhas na validação e possíveis vulnerabilidades de segurança.
+
+Retornou o resultado esperado, erro por que o sistema não permitiu e constou.
 
 # Teste Não Funcional:
 
-👍 **Brute Force:** O teste não funcional de brute force consiste em avaliar a capacidade do sistema de resistir a ataques de força bruta, que são tentativas automatizadas de adivinhar senhas ou credenciais por meio de múltiplas tentativas sequenciais, geralmente usando softwares que testam diversas combinações até encontrar a correta.
-![image](https://github.com/user-attachments/assets/fc262035-ea0b-440f-9b5a-196f24478117)
+✅ **Brute Force:** O teste não funcional de brute force consiste em avaliar a capacidade do sistema de resistir a ataques de força bruta, que são tentativas automatizadas de adivinhar senhas ou credenciais por meio de múltiplas tentativas sequenciais, geralmente usando softwares que testam diversas combinações até encontrar a correta.
 
-👎 **Teste de SQL Injection no campo senha:** O teste de SQL Injection no campo senha, no contexto de teste não funcional, tem como objetivo verificar se a aplicação é vulnerável a ataques que exploram falhas no tratamento das entradas do usuário para manipular comandos SQL. Ao inserir códigos maliciosos no campo senha, como ' OR '1'='1, o teste busca identificar se a aplicação executa a consulta SQL de forma insegura, permitindo que um invasor contorne a autenticação e acesse o sistema sem credenciais válidas.
+Retornou o resultado esperado, sistema não permitiu brute force. 
+
+❌ **Teste de SQL Injection no campo senha:** O teste de SQL Injection no campo senha, no contexto de teste não funcional, tem como objetivo verificar se a aplicação é vulnerável a ataques que exploram falhas no tratamento das entradas do usuário para manipular comandos SQL. Ao inserir códigos maliciosos no campo senha, como ' OR '1'='1, o teste busca identificar se a aplicação executa a consulta SQL de forma insegura, permitindo que um invasor contorne a autenticação e acesse o sistema sem credenciais válidas.
   
-Como não retornou o erro, provavelmente a Inserção funcionou, isso significa que a aplicação não está segura.
-![image](https://github.com/user-attachments/assets/968ce9da-7a5b-44d8-8e7e-41ece6c48688)
+Como não retornou o erro esperado, provavelmente a SQL Injection funcionou, isso significa que a aplicação não está segura.
 
-👍 **Teste de Verificação de mensagens de erro:** O teste de verificação de mensagens de erro no contexto de teste não funcional consiste em avaliar se o sistema apresenta mensagens claras, informativas e adequadas quando ocorrem erros ou falhas, como em tentativas de login com dados incorretos. Esse teste vai além de simplesmente verificar se a funcionalidade está correta; ele analisa a usabilidade e a experiência do usuário, garantindo que as mensagens ajudem o usuário a entender o problema e saibam como proceder.
-![image](https://github.com/user-attachments/assets/f01d3e9e-257f-46f0-a590-c0f1d8bbb558)
+✅ **Teste de Verificação de mensagens de erro:** O teste de verificação de mensagens de erro no contexto de teste não funcional consiste em avaliar se o sistema apresenta mensagens claras, informativas e adequadas quando ocorrem erros ou falhas, como em tentativas de login com dados incorretos. Esse teste vai além de simplesmente verificar se a funcionalidade está correta; ele analisa a usabilidade e a experiência do usuário, garantindo que as mensagens ajudem o usuário a entender o problema e saibam como proceder.
 
-👍 **whayTeste de Feedback Visual:** O teste de feedback visual, no contexto de teste não funcional, avalia como o sistema comunica visualmente ao usuário o resultado de suas ações, como confirmações, erros ou carregamentos. Esse tipo de teste verifica se o sistema apresenta indicadores claros e imediatos. Esse feedback visual é fundamental para a usabilidade, um aspecto não funcional, pois melhora a experiência do usuário, reduz dúvidas e evita frustrações. Além disso, garante que o sistema seja acessível e responsivo a diferentes interações, contribuindo para a confiabilidade e eficiência do software.
- ![image](https://github.com/user-attachments/assets/d49d98bd-eba8-478f-8d32-1196ffd93635)
+Retornou no resultado esperado, não obteve nenhuma informação sensível durante o teste. 
 
-👍 **Teste de Tempo de Resosta:** O tempo de resposta, no contexto de teste não funcional, refere-se ao tempo que o sistema leva para responder a uma solicitação do usuário, como o carregamento de uma página ou a autenticação em um login. Esse parâmetro é fundamental para avaliar o desempenho do software, garantindo que ele seja rápido e eficiente sob condições normais de uso.
-![image](https://github.com/user-attachments/assets/bf2d532b-b0a8-48ac-9b48-d0302a5f0674) 
+✅ **Teste de Feedback Visual:** O teste de feedback visual, no contexto de teste não funcional, avalia como o sistema comunica visualmente ao usuário o resultado de suas ações, como confirmações, erros ou carregamentos. Esse tipo de teste verifica se o sistema apresenta indicadores claros e imediatos. Esse feedback visual é fundamental para a usabilidade, um aspecto não funcional, pois melhora a experiência do usuário, reduz dúvidas e evita frustrações. Além disso, garante que o sistema seja acessível e responsivo a diferentes interações, contribuindo para a confiabilidade e eficiência do software.
+
+Retornou o resultado esperado.
+
+✅ **Teste de Tempo de Resosta:** O tempo de resposta, no contexto de teste não funcional, refere-se ao tempo que o sistema leva para responder a uma solicitação do usuário, como o carregamento de uma página ou a autenticação em um login. Esse parâmetro é fundamental para avaliar o desempenho do software, garantindo que ele seja rápido e eficiente sob condições normais de uso.
+
+Retornou o resultado esperado.
 
 # Conclusão dos Testes
 
