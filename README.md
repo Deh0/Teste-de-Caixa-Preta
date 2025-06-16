@@ -24,6 +24,5 @@ Nesse contexto, utilizamos o Parabank para realizar testes funcionais, focando n
 - <strong>Teste de Login com credenciais corretas:</strong> Para verificar se o sistema verifica corretamente um usuário quando ele fornece um nome de usuário e senha válidos. Ou seja, o teste confirma que ao inserir os dados de acesso legítimos, o sistema permite o acesso á conta, garantindo que o proceso de autenticalção está funcionando como esperado. 
 ![image](https://github.com/user-attachments/assets/c0c9932c-70e3-45c9-81dd-2d9354430b44)
 
-
-
-
+- <strong>Teste de Login com Senha Incorreta:</strong>Testar Login com senha incorreta propositalmente é útil para o teste de caixa preta porque permite validar se o sistema reage corretamente a entradas inválidas, sem precisar conhecer seu funcionamento interno. Esse tipo de teste verifica se o sistema bloqueia o acesso e exibe mensagens de erro apropriadas, garantindo que a funcionalidade de autenticação está protegendo o sistema contra acessos indevidos. No contexto do teste funcional, esse teste é importante para confirmar que o sistema cumpre os requisitos especificados, ou seja, que ele rejeita credenciais incorretas e impede o login, evitando falhas de segurança e melhorando a confiabilidade do sistema.
+![image](https://github.com/user-attachments/assets/2ad5d62b-c961-47e6-8614-c3d9b7634ad1)
