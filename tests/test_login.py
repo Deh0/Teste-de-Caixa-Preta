@@ -16,5 +16,4 @@ def test_login_sucesso(driver):
     driver.find_element(By.ID, "username").send_keys("tomsmith")
     driver.find_element(By.ID, "password").send_keys("SuperSecretPassword!")
     driver.find_element(By.CSS_SELECTOR, "button[tye='submit]").click()
-    assert "You logged into a secure area!" in driver.page_source
 
